@@ -1,221 +1,223 @@
-# Chrome 元素截圖工具
+# Chrome Element Screenshot Extension
 
-一個強大的 Chrome 瀏覽器擴展，讓你可以輕鬆截取網頁中特定元素的截圖。支援普通截圖和長截圖功能，適用於各種網頁元素。
+A powerful Chrome browser extension that allows you to easily capture screenshots of specific elements on web pages. Supports both regular screenshots and long screenshots for various web elements.
 
-## ✨ 功能特色
+[中文說明 / Chinese Documentation](./README-zh.md)
 
-- 🎯 **精確元素選擇** - 智能識別網頁元素邊界
-- 📜 **長截圖支援** - 自動處理可滾動內容和大型元素
-- 🖼️ **多格式支援** - PNG/JPEG 格式，可調整品質
-- ⚡ **快速操作** - 鍵盤快捷鍵和直觀界面
-- 🔧 **自訂設定** - 檔案命名、品質調整等
-- 💾 **自動下載** - 截圖完成後自動保存
+## ✨ Features
 
-## 🚀 快速開始
+- 🎯 **Precise Element Selection** - Smart detection of web element boundaries
+- 📜 **Long Screenshot Support** - Automatic handling of scrollable content and large elements
+- 🖼️ **Multiple Format Support** - PNG/JPEG formats with adjustable quality
+- ⚡ **Quick Operations** - Keyboard shortcuts and intuitive interface
+- 🔧 **Customizable Settings** - File naming, quality adjustment, and more
+- 💾 **Automatic Download** - Screenshots are automatically saved after capture
 
-### 安裝
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
-# 1. 克隆項目
-git clone <repository-url>
+# 1. Clone the repository
+git clone https://github.com/CatRaiden/chrome-element-screenshot.git
 cd chrome-element-screenshot
 
-# 2. 安裝依賴
+# 2. Install dependencies
 npm install
 
-# 3. 構建擴展
+# 3. Build the extension
 npm run build
 
-# 4. 載入到 Chrome
-# - 打開 chrome://extensions/
-# - 開啟「開發者模式」
-# - 點擊「載入未封裝項目」
-# - 選擇項目根目錄
+# 4. Load into Chrome
+# - Open chrome://extensions/
+# - Enable "Developer mode"
+# - Click "Load unpacked"
+# - Select the project root directory
 ```
 
-### 基本使用
+### Basic Usage
 
-1. **啟動截圖模式**
-   - 點擊瀏覽器工具列的擴展圖標 📷
-   - 點擊「開始截圖」按鈕
-   - 或按 `Enter` 鍵快速啟動
+1. **Start Screenshot Mode**
+   - Click the extension icon 📷 in the browser toolbar
+   - Click the "Start Screenshot" button
+   - Or press `Enter` for quick activation
 
-2. **選擇元素**
-   - 將滑鼠移動到要截圖的元素上
-   - 元素會被高亮顯示
-   - 點擊元素執行截圖
+2. **Select Element**
+   - Move your mouse over the element you want to capture
+   - The element will be highlighted
+   - Click the element to take the screenshot
 
-3. **完成截圖**
-   - 系統自動處理截圖
-   - 文件會下載到預設下載資料夾
-   - 按 `ESC` 鍵退出截圖模式
+3. **Complete Screenshot**
+   - The system automatically processes the screenshot
+   - Files are downloaded to the default download folder
+   - Press `ESC` to exit screenshot mode
 
-## 📋 支援的截圖類型
+## 📋 Supported Screenshot Types
 
-### 普通元素截圖
-- 按鈕、圖片、文字區塊
-- 表格、表單元素
-- 有 CSS 效果的元素（陰影、變換等）
+### Regular Element Screenshots
+- Buttons, images, text blocks
+- Tables, form elements
+- Elements with CSS effects (shadows, transforms, etc.)
 
-### 長截圖
-- 可滾動的容器元素
-- 超出視窗的大型元素
-- 長文章、聊天記錄、長表格
+### Long Screenshots
+- Scrollable container elements
+- Large elements that extend beyond the viewport
+- Long articles, chat logs, long tables
 
-### 複雜元素
-- iframe 內容
-- 固定定位元素
-- 高 z-index 層疊元素
+### Complex Elements
+- iframe content
+- Fixed positioned elements
+- High z-index layered elements
 
-## ⚙️ 設定選項
+## ⚙️ Settings Options
 
-### 快速設定（彈出視窗）
-- **圖片格式**：PNG（無損）/ JPEG（有損）
-- **圖片品質**：10%-100% 可調
-- **快捷操作**：一鍵啟動截圖
+### Quick Settings (Popup Window)
+- **Image Format**: PNG (lossless) / JPEG (lossy)
+- **Image Quality**: 10%-100% adjustable
+- **Quick Actions**: One-click screenshot activation
 
-### 詳細設定（設定頁面）
-- **檔案命名模板**：自訂檔案名格式
-- **自動下載**：開啟/關閉自動下載
-- **進度顯示**：顯示長截圖處理進度
-- **高亮顏色**：自訂元素選擇時的高亮顏色
+### Detailed Settings (Settings Page)
+- **File Naming Template**: Custom filename format
+- **Auto Download**: Enable/disable automatic download
+- **Progress Display**: Show long screenshot processing progress
+- **Highlight Color**: Customize element selection highlight color
 
-### 檔案命名變數
-- `{timestamp}` - 完整時間戳
-- `{date}` - 日期 (YYYY-MM-DD)
-- `{time}` - 時間 (HH-MM-SS)
+### File Naming Variables
+- `{timestamp}` - Full timestamp
+- `{date}` - Date (YYYY-MM-DD)
+- `{time}` - Time (HH-MM-SS)
 
-**範例：**
+**Examples:**
 - `screenshot-{timestamp}` → `screenshot-2024-01-15T10-30-45.png`
 - `element-{date}_{time}` → `element-2024-01-15_10-30-45.png`
 
-## ⌨️ 快捷鍵
+## ⌨️ Keyboard Shortcuts
 
-| 按鍵 | 功能 |
-|------|------|
-| `Enter` | 啟動截圖模式 |
-| `ESC` | 退出截圖模式 |
-| `F1` | 顯示說明（在彈出視窗中） |
+| Key | Function |
+|-----|----------|
+| `Enter` | Start screenshot mode |
+| `ESC` | Exit screenshot mode |
+| `F1` | Show help (in popup window) |
 
-## 🔧 開發
+## 🔧 Development
 
-### 項目結構
+### Project Structure
 
 ```
 chrome-element-screenshot/
 ├── src/
-│   ├── background/     # 背景腳本
-│   ├── content/        # 內容腳本
-│   ├── popup/          # 彈出視窗
-│   ├── options/        # 設定頁面
-│   └── types/          # TypeScript 類型定義
-├── dist/               # 構建輸出
-├── public/             # 靜態資源
-└── styles/             # 樣式文件
+│   ├── background/     # Background scripts
+│   ├── content/        # Content scripts
+│   ├── popup/          # Popup window
+│   ├── options/        # Settings page
+│   └── types/          # TypeScript type definitions
+├── dist/               # Build output
+├── public/             # Static assets
+└── styles/             # Style files
 ```
 
-### 開發命令
+### Development Commands
 
 ```bash
-# 開發模式（監聽文件變化）
+# Development mode (watch file changes)
 npm run dev
 
-# 生產構建
+# Production build
 npm run build
 
-# 運行測試
+# Run tests
 npm test
 
-# 代碼檢查
+# Code linting
 npm run lint
 
-# 類型檢查
+# Type checking
 npm run type-check
 ```
 
-### 技術棧
+### Tech Stack
 
-- **TypeScript** - 類型安全的 JavaScript
-- **Webpack** - 模組打包工具
-- **Chrome Extension Manifest V3** - 最新擴展標準
-- **Canvas API** - 圖片處理和拼接
+- **TypeScript** - Type-safe JavaScript
+- **Webpack** - Module bundler
+- **Chrome Extension Manifest V3** - Latest extension standard
+- **Canvas API** - Image processing and stitching
 - **Chrome APIs** - tabs, scripting, downloads, storage
 
-## 🛠️ 疑難排解
+## 🛠️ Troubleshooting
 
-### 常見問題
+### Common Issues
 
-**Q: 截圖失敗或空白**
-- 確認頁面已完全載入
-- 檢查元素是否在可視範圍內
-- 嘗試重新整理頁面
+**Q: Screenshot fails or appears blank**
+- Ensure the page is fully loaded
+- Check if the element is within the visible area
+- Try refreshing the page
 
-**Q: 長截圖不完整**
-- 確認元素確實可滾動或超出視窗
-- 檢查是否有 JavaScript 錯誤
-- 嘗試手動滾動後再截圖
+**Q: Long screenshot is incomplete**
+- Confirm the element is actually scrollable or extends beyond viewport
+- Check for JavaScript errors
+- Try manually scrolling before taking screenshot
 
-**Q: 檔案沒有自動下載**
-- 檢查瀏覽器下載設定
-- 確認「自動下載」選項已開啟
-- 檢查下載權限
+**Q: File doesn't auto-download**
+- Check browser download settings
+- Ensure "Auto Download" option is enabled
+- Verify download permissions
 
-**Q: 擴展無法啟動**
-- 重新載入擴展
-- 檢查 Chrome 版本（需 88+）
-- 查看控制台錯誤訊息
+**Q: Extension won't start**
+- Reload the extension
+- Check Chrome version (requires 88+)
+- Check console for error messages
 
-### 效能建議
+### Performance Tips
 
-**對於大型截圖：**
-- 使用 JPEG 格式減少檔案大小
-- 降低品質設定（70-80%）
-- 開啟進度顯示監控處理狀態
+**For large screenshots:**
+- Use JPEG format to reduce file size
+- Lower quality settings (70-80%)
+- Enable progress display to monitor processing
 
-**對於高解析度螢幕：**
-- 系統會自動偵測裝置像素比
-- 可能需要更多處理時間
-- 建議使用較小的截圖區域
+**For high-resolution screens:**
+- System automatically detects device pixel ratio
+- May require more processing time
+- Consider using smaller screenshot areas
 
-## 🔒 隱私與安全
+## 🔒 Privacy & Security
 
-### 權限說明
-- **activeTab**: 存取當前分頁內容
-- **tabs**: 截圖功能必需
-- **storage**: 儲存使用者設定
-- **downloads**: 自動下載截圖
-- **scripting**: 注入內容腳本
+### Permission Explanation
+- **activeTab**: Access current tab content
+- **tabs**: Required for screenshot functionality
+- **storage**: Store user settings
+- **downloads**: Auto-download screenshots
+- **scripting**: Inject content scripts
 
-### 資料處理
-- 所有處理都在本地進行
-- 不會上傳任何截圖或資料
-- 設定儲存在瀏覽器本地
+### Data Processing
+- All processing is done locally
+- No screenshots or data are uploaded
+- Settings are stored locally in browser
 
-## 📄 授權
+## 📄 License
 
 MIT License
 
-## 🤝 貢獻
+## 🤝 Contributing
 
-歡迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
-### 開發流程
-1. Fork 此項目
-2. 創建功能分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 開啟 Pull Request
+### Development Workflow
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📞 支援
+## 📞 Support
 
-如遇到問題，請提供：
-1. Chrome 版本
-2. 操作系統
-3. 錯誤訊息截圖
-4. 重現步驟
+If you encounter issues, please provide:
+1. Chrome version
+2. Operating system
+3. Error message screenshots
+4. Steps to reproduce
 
 ---
 
-**版本**: 1.0.0  
-**相容性**: Chrome 88+  
+**Version**: 1.0.0  
+**Compatibility**: Chrome 88+  
 **Manifest**: V3
