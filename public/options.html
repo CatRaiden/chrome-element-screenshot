@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素截圖工具 - 設置</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>元素截圖工具設置</h1>
+    </header>
+    
+    <main class="options-main">
+      <section class="settings-section">
+        <h2>截圖設置</h2>
+        
+        <div class="setting-group">
+          <label for="format-select">圖片格式：</label>
+          <select id="format-select">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG</option>
+          </select>
+        </div>
+        
+        <div class="setting-group quality-group">
+          <label for="quality-slider">圖片質量：</label>
+          <input type="range" id="quality-slider" min="10" max="100" value="90">
+          <span id="quality-value">90%</span>
+        </div>
+        
+        <div class="setting-group">
+          <label for="filename-template">文件命名模板：</label>
+          <input type="text" id="filename-template" value="screenshot-{timestamp}" placeholder="screenshot-{timestamp}">
+          <small class="help-text">可用變量: {timestamp}, {date}, {time}</small>
+        </div>
+      </section>
+      
+      <section class="settings-section">
+        <h2>行為設置</h2>
+        
+        <div class="setting-group">
+          <label>
+            <input type="checkbox" id="auto-download" checked>
+            自動下載截圖
+          </label>
+        </div>
+        
+        <div class="setting-group">
+          <label>
+            <input type="checkbox" id="show-progress" checked>
+            顯示進度指示器
+          </label>
+        </div>
+      </section>
+      
+      <section class="settings-section">
+        <h2>外觀設置</h2>
+        
+        <div class="setting-group">
+          <label for="highlight-color">元素高亮顏色：</label>
+          <input type="color" id="highlight-color" value="#007bff">
+        </div>
+      </section>
+      
+      <div class="actions-section">
+        <button id="save-settings" class="primary-button">保存設置</button>
+        <button id="reset-settings" class="secondary-button">重置為默認值</button>
+      </div>
+    </main>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

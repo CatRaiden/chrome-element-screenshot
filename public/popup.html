@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素截圖工具</title>
+  <link rel="stylesheet" href="../styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>元素截圖工具</h1>
+      <div class="status-indicator" id="status-indicator">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-text">準備就緒</span>
+      </div>
+    </header>
+    
+    <main class="popup-main">
+      <!-- 主要操作區域 -->
+      <div class="actions-section" id="actions-section">
+        <button id="start-screenshot" class="primary-button" 
+                title="點擊開始截圖模式 (Enter)" 
+                aria-label="開始截圖模式">
+          <span class="button-icon">📷</span>
+          開始截圖
+        </button>
+        <button id="stop-screenshot" class="secondary-button hidden" 
+                title="退出截圖模式 (ESC)" 
+                aria-label="退出截圖模式">
+          <span class="button-icon">⏹️</span>
+          退出截圖模式
+        </button>
+      </div>
+      
+      <!-- 進度指示器 -->
+      <div class="progress-section hidden" id="progress-section">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text" id="progress-text">處理中...</p>
+      </div>
+      
+      <!-- 操作提示和說明 -->
+      <div class="info-section" id="info-section">
+        <div class="instruction-card">
+          <h3>使用說明</h3>
+          <ol class="instruction-list">
+            <li>點擊「開始截圖」按鈕</li>
+            <li>將滑鼠移動到要截圖的元素上</li>
+            <li>元素會被高亮顯示</li>
+            <li>點擊元素完成截圖</li>
+          </ol>
+        </div>
+        
+        <div class="tips-card">
+          <h4>💡 小提示</h4>
+          <ul class="tips-list">
+            <li>支援長截圖功能，自動處理滾動內容</li>
+            <li>按 ESC 鍵可隨時退出截圖模式</li>
+            <li>截圖會自動下載到預設資料夾</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 錯誤提示區域 -->
+      <div class="error-section hidden" id="error-section">
+        <div class="error-card">
+          <div class="error-header">
+            <span class="error-icon">⚠️</span>
+            <span class="error-title">發生錯誤</span>
+          </div>
+          <p class="error-message" id="error-message"></p>
+          <div class="error-actions">
+            <button id="retry-button" class="retry-button">重試</button>
+            <button id="dismiss-error" class="dismiss-button">關閉</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 快速設定區域 -->
+      <div class="settings-section">
+        <details class="settings-details">
+          <summary class="settings-summary">快速設定</summary>
+          <div class="settings-content">
+            <div class="setting-item">
+              <label for="format-select">圖片格式：</label>
+              <select id="format-select" class="setting-select">
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+              </select>
+            </div>
+            <div class="setting-item">
+              <label for="quality-slider">圖片品質：</label>
+              <input type="range" id="quality-slider" class="setting-slider" 
+                     min="10" max="100" value="90">
+              <span id="quality-value">90%</span>
+            </div>
+          </div>
+        </details>
+      </div>
+    </main>
+    
+    <footer class="popup-footer">
+      <div class="footer-buttons">
+        <button id="open-options" class="link-button">更多設定</button>
+        <button id="show-help" class="link-button" title="顯示使用說明 (F1)">說明</button>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

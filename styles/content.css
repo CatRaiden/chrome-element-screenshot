@@ -1,0 +1,192 @@
+/* Content script styles for element highlighting */
+
+.screenshot-element-highlight {
+  position: absolute !important;
+  pointer-events: none !important;
+  border: 2px solid #007bff !important;
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  z-index: 999999 !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.2s ease !important;
+}
+
+.screenshot-selection-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  z-index: 999998 !important;
+  pointer-events: none !important;
+}
+
+.screenshot-tooltip {
+  position: absolute !important;
+  background-color: #333 !important;
+  color: white !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  z-index: 1000000 !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}/* Pro
+gress tooltip styles */
+.screenshot-progress-tooltip {
+  white-space: normal !important;
+  min-width: 200px !important;
+  padding: 8px 12px !important;
+}
+
+.screenshot-progress-bar-container {
+  width: 100% !important;
+  height: 6px !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 3px !important;
+  margin: 6px 0 4px 0 !important;
+  overflow: hidden !important;
+}
+
+.screenshot-progress-bar {
+  height: 100% !important;
+  background-color: #007bff !important;
+  border-radius: 3px !important;
+  transition: width 0.3s ease !important;
+}
+
+.screenshot-progress-text {
+  font-size: 10px !important;
+  text-align: center !important;
+  opacity: 0.8 !important;
+}
+
+/* Enhanced error tooltip styles */
+.screenshot-error-tooltip {
+  white-space: normal !important;
+  max-width: 400px !important;
+  padding: 12px 16px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  pointer-events: auto !important;
+}
+
+.screenshot-error-low {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+  border-left: 4px solid #ff8c00 !important;
+}
+
+.screenshot-error-medium {
+  background-color: #fd7e14 !important;
+  color: white !important;
+  border-left: 4px solid #dc3545 !important;
+}
+
+.screenshot-error-high {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border-left: 4px solid #721c24 !important;
+}
+
+.screenshot-error-critical {
+  background-color: #721c24 !important;
+  color: white !important;
+  border-left: 4px solid #000 !important;
+  animation: screenshot-error-pulse 2s infinite !important;
+}
+
+@keyframes screenshot-error-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.screenshot-error-message {
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.screenshot-user-action {
+  font-size: 11px !important;
+  opacity: 0.9 !important;
+  font-style: italic !important;
+  margin-bottom: 8px !important;
+}
+
+.screenshot-retry-indicator {
+  font-size: 11px !important;
+  opacity: 0.8 !important;
+  animation: screenshot-retry-blink 1.5s infinite !important;
+}
+
+@keyframes screenshot-retry-blink {
+  0%, 50% { opacity: 0.8; }
+  25%, 75% { opacity: 0.4; }
+}
+
+/* Manual save tooltip styles */
+.screenshot-manual-save-tooltip {
+  background-color: #495057 !important;
+  color: white !important;
+  border: 2px solid #007bff !important;
+  min-width: 300px !important;
+  text-align: center !important;
+}
+
+.screenshot-manual-save-instruction {
+  margin: 8px 0 12px 0 !important;
+  font-size: 11px !important;
+  opacity: 0.9 !important;
+}
+
+.screenshot-button-container {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  margin-top: 12px !important;
+}
+
+.screenshot-manual-save-button {
+  background-color: #007bff !important;
+  color: white !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.screenshot-manual-save-button:hover:not(:disabled) {
+  background-color: #0056b3 !important;
+}
+
+.screenshot-manual-save-button:disabled {
+  background-color: #6c757d !important;
+  cursor: not-allowed !important;
+}
+
+.screenshot-close-button {
+  background-color: #6c757d !important;
+  color: white !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.screenshot-close-button:hover {
+  background-color: #545b62 !important;
+}
+
+/* Retry tooltip styles */
+.screenshot-retry-tooltip {
+  background-color: #17a2b8 !important;
+  color: white !important;
+  border-left: 4px solid #138496 !important;
+}

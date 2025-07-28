@@ -1,0 +1,824 @@
+/* Popup UI styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  min-height: 400px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+.popup-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+/* Header styles */
+.popup-header {
+  margin-bottom: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e8eaed;
+  padding-bottom: 12px;
+}
+
+.popup-header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #34a853;
+  transition: background-color 0.3s;
+}
+
+.status-dot.warning {
+  background-color: #fbbc04;
+}
+
+.status-dot.error {
+  background-color: #ea4335;
+}
+
+.status-dot.processing {
+  background-color: #4285f4;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+#status-text {
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 500;
+}
+
+/* Main content */
+.popup-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Actions section */
+.actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.primary-button, .secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.primary-button {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #1557b0;
+  transform: translateY(-1px);
+}
+
+.primary-button:active {
+  background-color: #1246a0;
+  transform: translateY(0);
+}
+
+.secondary-button {
+  background-color: #f8f9fa;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+
+.secondary-button:hover {
+  background-color: #e8eaed;
+}
+
+.button-icon {
+  font-size: 16px;
+}
+
+/* Progress section */
+.progress-section {
+  text-align: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e8eaed;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1a73e8;
+  border-radius: 2px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #5f6368;
+}
+
+/* Info section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instruction-card, .tips-card {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.instruction-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.instruction-list {
+  font-size: 12px;
+  color: #5f6368;
+  line-height: 1.4;
+  padding-left: 16px;
+}
+
+.instruction-list li {
+  margin-bottom: 4px;
+}
+
+.tips-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #34a853;
+  margin-bottom: 6px;
+}
+
+.tips-list {
+  font-size: 11px;
+  color: #5f6368;
+  line-height: 1.3;
+  padding-left: 16px;
+}
+
+.tips-list li {
+  margin-bottom: 3px;
+}
+
+/* Error section */
+.error-section {
+  background-color: #fce8e6;
+  border: 1px solid #f28b82;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.error-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.error-icon {
+  font-size: 16px;
+}
+
+.error-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d93025;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #5f6368;
+  line-height: 1.4;
+}
+
+.error-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.retry-button, .dismiss-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.retry-button {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #1557b0;
+}
+
+.dismiss-button {
+  background-color: #f8f9fa;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+
+.dismiss-button:hover {
+  background-color: #e8eaed;
+}
+
+/* Settings section */
+.settings-section {
+  border-top: 1px solid #e8eaed;
+  padding-top: 12px;
+}
+
+.settings-details {
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.settings-summary {
+  padding: 10px 12px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f6368;
+  list-style: none;
+}
+
+.settings-summary:hover {
+  background-color: #e8eaed;
+}
+
+.settings-content {
+  padding: 12px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.setting-item label {
+  color: #5f6368;
+  font-weight: 500;
+}
+
+.setting-select {
+  padding: 4px 8px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: white;
+}
+
+.setting-slider {
+  width: 80px;
+  margin-right: 6px;
+}
+
+#quality-value {
+  font-size: 11px;
+  color: #5f6368;
+  min-width: 30px;
+}
+
+/* Footer */
+.popup-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #e8eaed;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.link-button:hover {
+  color: #1557b0;
+  background-color: #f8f9fa;
+  text-decoration: none;
+}
+
+/* Enhanced animations and transitions */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Enhanced button states */
+.primary-button:focus,
+.secondary-button:focus,
+.retry-button:focus,
+.dismiss-button:focus {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Enhanced error section */
+.error-section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.error-section.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Enhanced progress section */
+.progress-section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #1a73e8, #4285f4);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Enhanced status indicator */
+.status-dot.processing {
+  position: relative;
+}
+
+.status-dot.processing::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid #4285f4;
+  border-radius: 50%;
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Enhanced settings section */
+.settings-details[open] .settings-content {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Enhanced hover effects */
+.instruction-card:hover,
+.tips-card:hover {
+  background-color: #f1f3f4;
+  transition: background-color 0.2s;
+}
+
+.setting-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 4px;
+  margin: -4px;
+  transition: all 0.2s;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .primary-button {
+    border: 2px solid #000;
+  }
+  
+  .status-dot {
+    border: 1px solid #000;
+  }
+  
+  .error-section {
+    border-width: 2px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202124;
+    color: #e8eaed;
+  }
+  
+  .popup-header {
+    border-bottom-color: #3c4043;
+  }
+  
+  .instruction-card,
+  .tips-card,
+  .progress-section {
+    background-color: #303134;
+  }
+  
+  .settings-summary {
+    background-color: #303134;
+    color: #e8eaed;
+  }
+  
+  .settings-summary:hover {
+    background-color: #3c4043;
+  }
+  
+  .setting-select {
+    background-color: #303134;
+    color: #e8eaed;
+    border-color: #5f6368;
+  }
+}
+
+/* Help dialog styles */
+.help-dialog {
+  background: white;
+  border-radius: 8px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.help-header h3 {
+  margin: 0;
+  color: #1a73e8;
+  font-size: 16px;
+}
+
+.help-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #5f6368;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.help-close:hover {
+  background-color: #f8f9fa;
+}
+
+.help-content {
+  padding: 20px;
+}
+
+.help-section {
+  margin-bottom: 20px;
+}
+
+.help-section:last-child {
+  margin-bottom: 0;
+}
+
+.help-section h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.help-section ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #5f6368;
+}
+
+.help-section li {
+  margin-bottom: 4px;
+}
+
+.help-section kbd {
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: monospace;
+  color: #333;
+}
+
+/* Temporary message styles */
+.temporary-message {
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+}
+
+/* Enhanced button focus states */
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.retry-button:focus-visible,
+.dismiss-button:focus-visible,
+.link-button:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+/* Enhanced error section with better visual hierarchy */
+.error-section {
+  border-left: 4px solid #ea4335;
+}
+
+.error-message {
+  white-space: pre-line;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* Enhanced settings section */
+.settings-details[open] {
+  border-color: #1a73e8;
+}
+
+.settings-details[open] .settings-summary {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+/* Enhanced status indicator with better animations */
+.status-dot.processing::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #4285f4;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced progress bar with gradient */
+.progress-fill {
+  background: linear-gradient(90deg, #1a73e8 0%, #4285f4 50%, #1a73e8 100%);
+  background-size: 200% 100%;
+  animation: progressShine 2s ease-in-out infinite;
+}
+
+@keyframes progressShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Enhanced instruction and tips cards */
+.instruction-card,
+.tips-card {
+  border-left: 3px solid #34a853;
+  transition: all 0.2s ease;
+}
+
+.instruction-card:hover,
+.tips-card:hover {
+  border-left-color: #1a73e8;
+  transform: translateX(2px);
+}
+
+/* Enhanced dark mode support */
+@media (prefers-color-scheme: dark) {
+  .help-dialog {
+    background-color: #303134;
+    color: #e8eaed;
+  }
+  
+  .help-header {
+    border-bottom-color: #5f6368;
+  }
+  
+  .help-header h3 {
+    color: #8ab4f8;
+  }
+  
+  .help-close {
+    color: #e8eaed;
+  }
+  
+  .help-close:hover {
+    background-color: #3c4043;
+  }
+  
+  .help-section h4 {
+    color: #e8eaed;
+  }
+  
+  .help-section kbd {
+    background-color: #3c4043;
+    border-color: #5f6368;
+    color: #e8eaed;
+  }
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in;
+}
